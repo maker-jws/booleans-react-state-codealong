@@ -8,7 +8,7 @@
     
     ```js
     const stateTools = useState(10)  stateTools => [state, dispatcher]
-    ```
+    
 
 
      react hook (useState) -> listening for changes to certain value
@@ -17,3 +17,4 @@
      dispatcher(newValue) => react takes the new value and updates the state variable
      then immediate triggers a rerender of the component
      console.log(stateTools[0])
+    ```
