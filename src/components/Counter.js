@@ -34,25 +34,32 @@ function Counter(props) {
     
     // Objective: 
     // write a "handle decrement" function handler 
-    function handleDecrement (){
+    function handleDecrement (e){
         const newNumber = counter - 1
         if(newNumber >=0 ){
-            setCounter(newNumber)
-            // setHistory([...history, newNumber])
+            setCounter(newNumber) 
+            newNumber %2 == 0 ? setBackground("even") : setBackground("odd")
+            setHistory([...history, newNumber])
         } 
+
     }
     // - prevents the number from going below zero
     // - when handler is called it will try to decrement counter by 1 (setCounter)
     
-    function handleIncrement (){
+    function handleIncrement (e){
+        // console.log(e)
         const newNumber = counter + 1
 
         if(newNumber > 20){
             setCounter(10)
-            // setHistory([...history, 10])
+            setBackground("even")
+            setHistory([...history, 10])
         } else {
             setCounter(newNumber)
-            // setHistory([...history, newNumber])
+            newNumber %2 == 0 ? setBackground("even") : setBackground("odd")
+            setHistory([...history, newNumber])
+            // when passing array data to state, we want to create a new array, spread our old values (elements) in their current position, add / mutate the copy before setting state.
+
             // whatever value you pass to your set function(setCounter) =-> overrides + updates counter 
         }
         
@@ -62,7 +69,7 @@ function Counter(props) {
     return (
         <div className={ "Counter "+ background }>
             <h3>Counter</h3>
-            {/* <h4>History: {`[ ${history.join(", ")}]`}</h4> */}
+            <h4>History: {`[ ${history.join(", ")}]`}</h4>
             <p>Current Value: <span className="display-number">{counter}</span></p>
             <section>
                 <button onClick={ handleDecrement }>-</button>
@@ -71,17 +78,6 @@ function Counter(props) {
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
 
 export default Counter
 export function Example() {
