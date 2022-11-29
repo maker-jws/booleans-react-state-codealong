@@ -6,15 +6,23 @@
 
 ## Example Syntax: 
     
-    ```js
-    const stateTools = useState(10)  stateTools => [state, dispatcher]
+ ```js
+
+ /*
+ 
+ const stateTools = useState(10)  stateTools => [state, dispatcher]
+ console.log(stateTools[0]) -> state
+console.log(stateTools[1]) -> dispatcher()
+
+ */
+
+ ```
     
-
-
-     react hook (useState) -> listening for changes to certain value
-     useState() -> inside of the component is invoked calling the function (initial value for our variable)
-     [initial value, dispatcher] 
-     dispatcher(newValue) => react takes the new value and updates the state variable
-     then immediate triggers a rerender of the component
-     console.log(stateTools[0])
-    ```
+- react hook (useState) -> listening for changes to certain value
+     
+- useState() -> inside of the component is invoked calling the function (initial value for our variable)
+     
+- useState returns  [initial value, dispatcher] 
+    
+- dispatcher(newValue) => react takes the new value and updates the state variable then immediate triggers a rerender of the component
+     
